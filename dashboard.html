@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>5:1 Ratio Dashboard - Powered by THE GREATNESS EMPRESARIAL</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>📊 5:1 Ratio Dashboard</h1>
+    <p>Powered by <strong>THE GREATNESS EMPRESARIAL</strong></p>
+  </header>
+
+  <!-- Alert Message (if payment is due) -->
+  <div id="unpaidAlert" class="alert alert-warning" style="display: none;">
+    ⚠️ You owe a 10% fee on your profits. Please pay within 7 days or the bot will pause automatically.
+  </div>
+
+  <!-- Trading Controls -->
+  <section class="controls">
+    <h2>🔧 Trading Settings</h2>
+
+    <label for="exchange">Select Exchange:</label>
+    <select id="exchange">
+      <option>Bybit</option>
+      <option>Binance</option>
+      <option>KuCoin</option>
+      <option>OKX</option>
+      <option>MEXC</option>
+    </select>
+
+    <label for="pair">Halal Coin Pair:</label>
+    <select id="pair">
+      <option>ETH/USDT</option>
+      <option>XRP/USDT</option>
+      <option>USDT/USDT</option>
+      <option>BNB/USDT</option>
+      <option>ADA/USDT</option>
+      <option>DOT/USDT</option>
+      <option>TRX/USDT</option>
+      <option>LINK/USDT</option>
+    </select>
+
+    <label for="ratio">Select Ratio (1:1 to 10:1):</label>
+    <select id="ratio">
+      <option>1:1</option>
+      <option>2:1</option>
+      <option>3:1</option>
+      <option>4:1</option>
+      <option selected>5:1</option>
+      <option>6:1</option>
+      <option>7:1</option>
+      <option>8:1</option>
+      <option>9:1</option>
+      <option>10:1</option>
+    </select>
+
+    <label for="percent">Buy/Sell % (1% - 10%):</label>
+    <input type="number" id="percent" min="1" max="10" value="3" />
+    <small>e.g., 3% = Buy at -3%, Sell at +3%</small>
+
+    <button onclick="startBot()">Start Bot</button>
+  </section>
+
+  <!-- Trade Activity Log -->
+  <section class="trades">
+    <h2>📈 Trade Activity</h2>
+    <div id="tradeLog">
+      <!-- Trades will be shown here -->
+    </div>
+  </section>
+
+  <!-- Education + Help -->
+  <section class="help">
+    <h2>📘 How This Works</h2>
+    <ul>
+      <li><strong>Ratio:</strong> 5:1 means you're risking 1 to gain 5.</li>
+      <li><strong>Buy/Sell %:</strong> Bot will place limit orders based on your % settings.</li>
+      <li><strong>Halal Coins Only:</strong> ETH, XRP, USDT, BNB, ADA, DOT, TRX, LINK</li>
+      <li><strong>Reinvestment:</strong> 80% of all profits are reinvested automatically.</li>
+      <li><strong>Profit Fee:</strong> Only 10% of profit is charged. If no profit = no fee.</li>
+      <li><strong>Alerts:</strong> Telegram alerts will remind you to pay. Bot will pause if unpaid after 10 days.</li>
+    </ul>
+  </section>
+
+  <!-- YouTube Embed -->
+  <section class="video">
+    <h2>🎥 Learn How to Use the Bot</h2>
+    <p>Watch our YouTube video or read the texts above to understand how it works.</p>
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 THE GREATNESS EMPRESARIAL. All Rights Reserved.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
