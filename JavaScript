@@ -1,0 +1,33 @@
+const activeTrades = [
+  { coin: "ETH/USDT", buyPrice: 2380, targetSell: 2451 },
+  { coin: "ADA/USDT", buyPrice: 0.43, targetSell: 0.44 }
+];
+
+const completedTrades = [
+  { coin: "ETH/USDT", buy: 2200, sell: 2266, profit: 66, date: "Jul 9" },
+  { coin: "TRX/USDT", buy: 0.11, sell: 0.115, profit: 8, date: "Jul 8" }
+];
+
+function populateTrades() {
+  const activeEl = document.getElementById("activeTrades");
+  const completeEl = document.getElementById("completedTrades");
+
+  activeTrades.forEach(trade => {
+    const li = document.createElement("li");
+    li.innerText = `${trade.coin} | Buy at: $${trade.buyPrice} | Sell Target: $${trade.targetSell}`;
+    activeEl.appendChild(li);
+  });
+
+  completedTrades.forEach(trade => {
+    const fee = (trade.profit * 0.10).toFixed(2);
+    const li = document.createElement("li");
+    li.innerText = `${trade.coin} | Buy: $${trade.buy} → Sell: $${trade.sell} | Profit: $${trade.profit} | Fee: $${fee} | ${trade.date}`;
+    completeEl.appendChild(li);
+  });
+}
+
+function makePayment() {
+  alert("Redirecting to payment gateway (Coming soon)");
+}
+
+window.onload = populateTrades;
